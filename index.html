@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Hard question about objects.
+      // Anwser By Arslan chaudhry
+      //You go to a jewelry shop and try to find the most expensive piece of jewelry. You write down the name of each piece of jewelry and its price.Create a function that gets the name of the piece of jewelry with the highest price and returns "The most expensive one is the {name of jewelry piece}".
+      // no1
+      {
+        const obj = {
+          "Diamond Earrings": 980,
+          "Gold Watch": 250,
+          "Pearl Necklac": 4650,
+          "Pearle ": 400000,
+        };
+        let newObj = Object.values(obj).sort(function (a, b) {
+          return a - b;
+        });
+        let answer = newObj[newObj.length - 1];
+        function findKey(objs, values) {
+          return Object.keys(objs).find((key) => {
+            return objs[key] === values;
+          });
+        }
+        // console.log(`The expensive jewlery is ${findKey(obj, answer)}`);
+      }
+      // no2
+      // Create a function that takes an array of objects (groceries) which calculates the total price and returns it as a number. A grocery object has a product, a quantity and a price, for example:
+      {
+        const productDetails = [
+          { product: "Milk", quantity: 1, price: 1.5 },
+          { product: "Milk", quantity: 4, price: 13.5 },
+          { product: "Milk", quantity: 1, price: 13.5 },
+          { product: "Milk", quantity: 1, price: 13 },
+        ];
+        const result = productDetails.map((price) => {
+          return price.price;
+        });
+        let initial = 0;
+        const totalPrice = result.reduce((pre, cur) => {
+          return pre + cur;
+        }, initial);
+        // console.log(`The total price is ${totalPrice}`);
+      }
+      //  no3
+      //Given an object with soda drinks and a number, return a string with the name of the 7 up bottle that matches the given number.
+      {
+        const list = { sprite: 100, "7up A": 100, "sting B": 50 };
+        let giveValue = 50;
+        function result(newList, number) {
+          return Object.keys(newList).filter((key) => {
+            return /\s/.test(key) && newList[key] === giveValue;
+          });
+        }
+        console.log(result(list, giveValue));
+      }
+    // no4:
+    
+    </script>
+  </body>
+</html>
